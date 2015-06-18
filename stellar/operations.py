@@ -58,7 +58,7 @@ def copy_database(raw_conn, from_database, to_database):
     if raw_conn.engine.dialect.name == 'postgresql':
         raw_conn.execute(
             '''
-                CREATE DATABASE "%s" WITH TEMPLATE "%s" TABLESPACE = pg_default;
+                CREATE DATABASE "%s" WITH TEMPLATE "%s" TABLESPACE = slow_disk;
             ''' %
             (
                 to_database,
